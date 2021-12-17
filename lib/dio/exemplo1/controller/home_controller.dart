@@ -1,6 +1,6 @@
 import 'package:learn_flutter/dio/exemplo1/models/todo_models.dart';
 import 'package:learn_flutter/dio/exemplo1/repositories/todo_repositories.dart';
-import 'package:learn_flutter/models/todo_models.dart';
+
 
 
 class HomeController{

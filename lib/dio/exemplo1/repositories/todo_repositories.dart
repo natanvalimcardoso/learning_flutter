@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:learn_flutter/dio/exemplo1/models/todo_models.dart';
-import 'package:learn_flutter/models/todo_models.dart';
+
 
 class TodoRepositories {
   var dio = Dio();
