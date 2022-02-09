@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/widgets/Listview_builder.dart';
-import 'package:learn_flutter/widgets/controller.dart';
 import 'package:learn_flutter/widgets/flexible.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+   MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -18,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  FlexibleWidget(),
+      home: FlexiblePage() ,
       debugShowCheckedModeBanner: false,
       
     );
