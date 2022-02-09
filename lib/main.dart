@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/widgets/Listview_builder.dart';
 import 'package:learn_flutter/widgets/controller.dart';
+import 'package:learn_flutter/widgets/flexible.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:   Controller(),
+      home:  FlexibleWidget(),
       debugShowCheckedModeBanner: false,
       
     );
