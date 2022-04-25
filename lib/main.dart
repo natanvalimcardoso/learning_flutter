@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/widgets/flexible.dart';
 
+import 'other/streambuilder/pages/streambuilder_page.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -8,7 +10,6 @@ void main() {
 class MyApp extends StatelessWidget {
    MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) { //precisa sempre ter o build para funcionar o app.
     return MaterialApp(
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FlexiblePage() ,
+      home: StreamBuilderPage(),
       debugShowCheckedModeBanner: false,
       
     );
