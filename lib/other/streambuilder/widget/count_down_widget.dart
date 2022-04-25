@@ -10,11 +10,11 @@ class CountDownWidget extends StatelessWidget {
   getColor(int now, int limit) {
     double factor = now / limit;
     if (factor < 0.2) {
-      return Colors.cyan;
+      return Colors.red;
     } else if (factor > 0.1 && factor <= 0.2) {
       return Colors.yellow[400];
     } else {
-      return Colors.red;
+      return Colors.cyan;
     }
   }
 
@@ -23,24 +23,31 @@ class CountDownWidget extends StatelessWidget {
     final treino = event.treino;
     return Stack(
       children: [
-        SizedBox(
-          width: 250,
-          height: 250,
-          child: CircularProgressIndicator(
-            value: 1 - (event.now / treino.seconds),
-            strokeWidth: 15,
-            backgroundColor: getColor(event.now, treino.seconds),
+        Center(
+          child: SizedBox(
+            width: 250,
+            height: 250,
+            child: CircularProgressIndicator(
+              value: 1 - (event.now / treino.seconds),
+              strokeWidth: 15,
+              backgroundColor: Colors.grey.shade300,
+              color: getColor(event.now, treino.seconds),
+            ),
           ),
         ),
-        Text(
-          event.now.toString(),
-          style: const TextStyle(fontSize: 70),
-        ),
-        Positioned(
-          bottom: 60,
+        Center(
           child: Text(
-            treino.name.toString(),
-            style: const TextStyle(fontSize: 18),
+            event.now.toString(),
+            style: const TextStyle(fontSize: 70),
+          ),
+        ),
+        Center(
+          child: Padding(
+            padding: EdgeInsets.only(top: 100),
+            child: Text(
+              treino.name.toString(),
+              style: const TextStyle(fontSize: 18),
+            ),
           ),
         ),
       ],
