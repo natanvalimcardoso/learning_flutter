@@ -17,9 +17,7 @@ class StreamBuilderPage extends StatefulWidget {
 
 class _StreamBuilderPageState extends State<StreamBuilderPage> {
   bool showStartButton = true;
-
   late final TreinoController controller;
-
   late final Stream<TreinoEvent> treinoStream;// Serve para receber os eventos do stream
 
   start() {
@@ -53,7 +51,7 @@ class _StreamBuilderPageState extends State<StreamBuilderPage> {
                   } else if (event is StartEvent) {
                     return const Text('Iniciando o treino...');
                   } else if (event is EndEvent) {
-                    return const Text('Treino Finalizado');
+                    return const Text('Treino Finalizado'); // Como ele sabe que é treino start ou end
                   } else if (event is ExercicioEvent) {
                     return CountDownWidget(event: event);
                   }

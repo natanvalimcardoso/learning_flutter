@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/widgets/flexible.dart';
 
+import 'myapp/list_with_stream/pages/list_home_page.dart';
 import 'other/streambuilder/pages/streambuilder_page.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: StreamBuilderPage(),
+      home: ListHomePage(),
       debugShowCheckedModeBanner: false,
       
     );
