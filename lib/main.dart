@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/widgets/flexible.dart';
-
 import 'myapp/list_with_stream/pages/list_home_page.dart';
-import 'other/streambuilder/pages/streambuilder_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-   MyApp({Key? key}) : super(key: key);
+   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) { //precisa sempre ter o build para funcionar o app.
@@ -18,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ListHomePage(),
+      home: const ListHomePage(),
       debugShowCheckedModeBanner: false,
       
     );

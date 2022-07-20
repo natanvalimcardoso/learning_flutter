@@ -43,7 +43,7 @@ class CountDownWidget extends StatelessWidget {
         ),
         Center(
           child: Padding(
-            padding: EdgeInsets.only(top: 100),
+            padding: const EdgeInsets.only(top: 100),
             child: Text(
               treino.name.toString(),
               style: const TextStyle(fontSize: 18),

@@ -17,7 +17,7 @@ class FlexiblePage extends StatelessWidget {
           Flexible(
             flex: 1,
             child: Container(
-              color: Color.fromARGB(255, 34, 0, 224),
+              color: const Color.fromARGB(255, 34, 0, 224),
             ),
           ),
         ],

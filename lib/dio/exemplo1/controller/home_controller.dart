@@ -5,6 +5,7 @@ import 'package:learn_flutter/dio/exemplo1/repositories/todo_repositories.dart';
 
 class HomeController{
   List<TodoModel> todos = [];
+  // ignore: prefer_final_fields
   var _repositories = TodoRepositories(); // intancia a classe das api
   HomeState state = HomeState.start;
   

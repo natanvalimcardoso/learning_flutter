@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
@@ -33,10 +35,10 @@ Future<void> buscarPosts() async {
     var responseData = convert.jsonDecode(response.body);
     // print(responseData.runtimeType);
     if (responseData is List) {
-      responseData.forEach((element) {
+      for (var element in responseData) {
         print(element);
         print(element['id']);
-      });
+      }
     }
   }
 }

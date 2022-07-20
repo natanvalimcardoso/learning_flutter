@@ -40,6 +40,7 @@ class _ControllerState extends State<Controller> {
                 onPressed: () {
                   if (_valorController.text.isNotEmpty) {
                     final int valor = int.parse(_valorController.text);
+                    // ignore: avoid_print
                     print(valor); //Serviu para mostrar no console de debug
                   }
                 },

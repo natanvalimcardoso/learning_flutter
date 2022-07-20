@@ -5,7 +5,7 @@ import 'package:learn_flutter/myapp/list_with_stream/events/ready_event.dart';
 import '../controllers/list_controller.dart';
 
 class ListHomePage extends StatefulWidget {
-  ListHomePage({Key? key}) : super(key: key);
+  const ListHomePage({Key? key}) : super(key: key);
 
   @override
   State<ListHomePage> createState() => _ListHomePageState();

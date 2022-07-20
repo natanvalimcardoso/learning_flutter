@@ -14,11 +14,11 @@ class TodoModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['userId'] = this.userId;
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['completed'] = this.completed;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['userId'] = userId;
+    data['id'] = id;
+    data['title'] = title;
+    data['completed'] = completed;
     return data;
   }
 }
