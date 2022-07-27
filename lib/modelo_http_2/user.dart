@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'user_types.dart';
 
 class User {
@@ -13,13 +15,35 @@ class User {
     required this.userTypes,
   });
 
+//---------------------//--------------------//
+
   factory User.fromMap(Map<String, dynamic> map) {
     return User(
         id: map['id'] ?? '',
         name: map['name'] ?? '',
         userName: map['username'] ?? '',
-        userTypes: map['user_types']?.map());
+        userTypes: map['user_types']?.map().toList((type) {
+              return UserTypes.fromMap(type);
+            }) ??
+            []);
   }
+
+//---------------------//--------------------//
+
+  factory User.fromJson(String source) => User.fromMap(jsonDecode(source));
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'username': userName,
+      'userTypes': userTypes.map((e) => e.toMap()).toList()
+    };
+  }
+
+//---------------------//--------------------//
+
+  String toJson() => jsonEncode(toMap());
 }
 
 
