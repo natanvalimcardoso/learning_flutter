@@ -64,9 +64,6 @@ class Cidade {
   }
   }
 
-
-
-
 // {
 // cep: "88990-000",
 // logradouro: "",

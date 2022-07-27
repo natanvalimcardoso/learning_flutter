@@ -8,11 +8,10 @@ void main() {
 
 Future<void> buscarCep({required String cep}) async {
   var url = 'https://viacep.com.br/ws/$cep/json/';
-  var response = await http.get(Uri.parse(url));
+  var response = await http.get(Uri.parse(url)); //* Json
 
   if (response.statusCode == 200) {
     var cidade = Cidade.fromJson(response.body);
-    // ignore: avoid_print
-    print(cidade);
+    print(cidade.toJson());
   }
 }
