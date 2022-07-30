@@ -1,11 +1,12 @@
 Future<void> main() async {
-  final interval = Duration(seconds: 2);
+  const interval = Duration(seconds: 2);
   var stream = Stream<int>.periodic(interval, callback);
   stream = stream.take(5);
-
-  await for (var element in stream) {
-    print(element);
-  }
+  
+  stream.listen((numero) { 
+    print(numero);
+  });
+ 
 }
 
 int callback(int value) {
