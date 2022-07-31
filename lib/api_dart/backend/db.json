@@ -26,14 +26,14 @@
             "endereco": {
                 "rua": "Rua Governador Jorge Lacerda",
                 "CEP": "09050496911",
-                "numero": "12",
+                "numero": 12,
                 "cidade": {
                     "id": 1,
                     "nome": "São Paulo"
                 },
                 "telefone": {
                     "ddd": 11,
-                    "numero": 48991749818
+                    "numero": "48991749818"
                 }
             }
         },
@@ -63,14 +63,14 @@
             "endereco": {
                 "rua": "Rua Governador Jorge Lacerda",
                 "CEP": "09050496911",
-                "numero": "12",
+                "numero": 12,
                 "cidade": {
                     "id": 1,
                     "nome": "São Paulo"
                 },
                 "telefone": {
                     "ddd": 11,
-                    "numero": 48991749818
+                    "numero": "48991749818"
                 }
             }
         }
