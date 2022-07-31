@@ -1,0 +1,32 @@
+{
+    "nome": "Natan Valim Cardoso",
+    "idade": 21,
+    "isAluno": true,
+    "nomesCurso": [
+        "Masterclass",
+        "Alura",
+        "Udemy Flutter",
+        "Academia do Flutter"
+    ],
+    "cursos": [
+        {
+            "id": 1,
+            "nome": "Masterclass",
+            "isAluno": true
+        },
+        {
+            "id": 2,
+            "nome": "Imersão Bloc",
+            "isAluno": false
+        }
+    ],
+    "telefone": {
+        "ddd": 11,
+        "numero": 48991749818
+    },
+    "endereco": {
+        "rua": "Rua Governador Jorge Lacerda",
+        "numero": 200,
+        "CEP": "09050496911"
+    }
+}
