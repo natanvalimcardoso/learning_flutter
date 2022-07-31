@@ -1,0 +1,78 @@
+{
+    "alunos": [
+        {
+            "id": "1",
+            "nome": "Natan Valim Cardoso",
+            "idade": 21,
+            "isAluno": true,
+            "nomesCurso": [
+                "Masterclass",
+                "Alura",
+                "Udemy Flutter",
+                "Academia do Flutter"
+            ],
+            "cursos": [
+                {
+                    "id": 1,
+                    "nome": "Masterclass",
+                    "isAluno": true
+                },
+                {
+                    "id": 2,
+                    "nome": "Imersão Bloc",
+                    "isAluno": false
+                }
+            ],
+            "endereco": {
+                "rua": "Rua Governador Jorge Lacerda",
+                "CEP": "09050496911",
+                "numero": "12",
+                "cidade": {
+                    "id": 1,
+                    "nome": "São Paulo"
+                },
+                "telefone": {
+                    "ddd": 11,
+                    "numero": 48991749818
+                }
+            }
+        },
+        {
+            "id": "2",
+            "nome": "Ana Valim Cardoso",
+            "idade": 17,
+            "isAluno": false,
+            "nomesCurso": [
+                "Masterclass",
+                "Alura",
+                "Udemy Flutter",
+                "Academia do Flutter"
+            ],
+            "cursos": [
+                {
+                    "id": 1,
+                    "nome": "Masterclass",
+                    "isAluno": true
+                },
+                {
+                    "id": 2,
+                    "nome": "Imersão Bloc",
+                    "isAluno": false
+                }
+            ],
+            "endereco": {
+                "rua": "Rua Governador Jorge Lacerda",
+                "CEP": "09050496911",
+                "numero": "12",
+                "cidade": {
+                    "id": 1,
+                    "nome": "São Paulo"
+                },
+                "telefone": {
+                    "ddd": 11,
+                    "numero": 48991749818
+                }
+            }
+        }
+    ]
+}
