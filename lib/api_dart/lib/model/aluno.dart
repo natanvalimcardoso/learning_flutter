@@ -55,6 +55,11 @@ class Aluno {
   factory Aluno.fromJson(String json) => Aluno.fromMap(jsonDecode(json));
 
 
+
+  @override
+  String toString() {
+    return 'Aluno(id: $id, nome: $nome, idade: $idade, isAluno: $isAluno, nomesCurso: $nomesCurso, cursos: $cursos, endereco: $endereco)';
+  }
 }
 
 

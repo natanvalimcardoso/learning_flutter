@@ -30,8 +30,6 @@ class Cidade {
 
   @override
   String toString() => 'Cidade(id: $id, nome: $nome)';
-
-  
 }
 
 // cidade: {

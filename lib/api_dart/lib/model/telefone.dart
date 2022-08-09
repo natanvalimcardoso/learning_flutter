@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 class Telefone {
@@ -27,6 +28,9 @@ class Telefone {
 
 //* fromJson = É um método baseado em uma string json que retorna um objeto
   factory Telefone.fromJson(String json) => Telefone.fromMap(jsonDecode(json));
+
+  @override
+  String toString() => 'Telefone(ddd: $ddd, numero: $numero)';
 }
 
 

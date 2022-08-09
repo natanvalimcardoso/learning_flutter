@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 class Cursos {
@@ -18,7 +19,7 @@ class Cursos {
   factory Cursos.fromMap(Map<String, dynamic> map) {
     return Cursos(
       id: map['id'] ?? 0,
-      nome: map['nome'] ?? '',         //* Bool, Int, String
+      nome: map['nome'] ?? '', //* Bool, Int, String
       isAluno: map['isAluno'] ?? false,
     );
   }
@@ -26,6 +27,9 @@ class Cursos {
   String toJson() => jsonEncode(toMap());
 
   factory Cursos.fromJson(String json) => Cursos.fromMap(jsonDecode(json));
+
+  @override
+  String toString() => 'Cursos(id: $id, nome: $nome, isAluno: $isAluno)';
 }
 
 // cursos: [
