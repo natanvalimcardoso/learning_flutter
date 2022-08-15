@@ -6,6 +6,6 @@ class AlunosController {
 
   Future<void> findAll() async {
     final alunos = await _alunosRepository.findAll();
-    alunos.forEach((aluno) => print(aluno));
+    alunos.forEach(print);
   }
 }

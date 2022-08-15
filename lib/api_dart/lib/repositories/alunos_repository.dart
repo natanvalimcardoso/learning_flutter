@@ -4,9 +4,13 @@ import 'package:http/http.dart' as http;
 import '../model/aluno.dart';
 
 class AlunosRepository {
-  Future<List<Aluno>> findAll() async {
-    final alunosResponse = await http.get(Uri.parse('http://localhost:3031/alunos'));
 
-    return [];                                                                    
+  Future<List<Aluno>> findAll() async {
+
+    final alunosResponse = await http.get(Uri.parse('http://localhost:3031/alunos'));
+                                
+    print(alunosResponse.body);
+    
+    return [];
   }
 }

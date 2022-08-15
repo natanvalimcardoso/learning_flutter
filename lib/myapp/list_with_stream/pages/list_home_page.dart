@@ -15,11 +15,12 @@ class _ListHomePageState extends State<ListHomePage> {
   late final Stream<ListEvent> listStream;
   late final ListController controller;
   int _selectedIndex = 1;
-  
+  int numeros = 0;
+
   start() {
     //Aqui é o que acontece quando o botão é clicado e o treino começa
     controller = ListController(index: []);
-    
+
     setState(() {
       listStream = controller.start(); //aqui ele vai retornar o nosso stream
     });
@@ -40,7 +41,7 @@ class _ListHomePageState extends State<ListHomePage> {
                 ListEvent? event = snapshot.data;
                 if (snapshot.hasError) {
                   return const Text('Erro ao carregar a lista');
-                } else if (event is ReadyEvent ) {
+                } else if (event is ReadyEvent) {
                   return ListView.builder(
                     itemCount: _selectedIndex,
                     itemBuilder: (context, index) {
@@ -60,6 +61,7 @@ class _ListHomePageState extends State<ListHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
+            numeros++;
             _selectedIndex++;
           });
         },
