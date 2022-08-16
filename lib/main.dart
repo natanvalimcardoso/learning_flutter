@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'myapp/list_with_stream/pages/list_home_page.dart';
+import 'academia/background/page_background.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ListHomePage(),
+      home: const PageBackground(),
       debugShowCheckedModeBanner: false,
       
     );
