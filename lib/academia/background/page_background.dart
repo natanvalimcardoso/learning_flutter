@@ -16,8 +16,10 @@ class PageBackground extends StatelessWidget {
         child: Container(
           color: Colors.black.withOpacity(0.5),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               RichText(
+                textAlign: TextAlign.center,
                 text: const TextSpan(
                   children: <TextSpan>[
                     TextSpan(
@@ -25,7 +27,7 @@ class PageBackground extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 196, 196, 196),
                       ),
                     ),
                     // quebra linha
@@ -34,7 +36,7 @@ class PageBackground extends StatelessWidget {
                     ),
                     // texto alinhado
                     TextSpan(
-                      text: 'Flutter',
+                      text: 'Natan',
                       style: TextStyle(
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
