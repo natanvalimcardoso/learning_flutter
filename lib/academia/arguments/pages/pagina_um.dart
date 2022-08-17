@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/academia/arguments/pages/pagina_dois.dart';
 
 class PaginaUm extends StatelessWidget {
   PaginaUm({Key? key}) : super(key: key);
@@ -8,20 +9,24 @@ class PaginaUm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(
-            child: Column(
-              children: [
-                TextField(
-                  controller: _textEditingController,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    
-                  },
-                  child: const Text('Enviar dados'),
-                ),
-              ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: _textEditingController,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  '/paginaDois',
+                  arguments: _textEditingController.text,
+                );
+              },
+              child: const Text('Enviar dados'),
             ),
           )
         ],

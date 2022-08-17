@@ -7,9 +7,20 @@ class PaginaDois extends StatefulWidget {
   State<PaginaDois> createState() => _PaginaDoisState();
 }
 
-String textArgument = '';
-
 class _PaginaDoisState extends State<PaginaDois> {
+   String textArgument = '';
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      setState(() {
+        final argumentsData = ModalRoute.of(context)?.settings.arguments as String?;
+        textArgument = argumentsData ?? '';
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,10 +28,11 @@ class _PaginaDoisState extends State<PaginaDois> {
         title: const Text('2 PÁGINA'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Text('O usuário digitou: $textArgument')
-          )
+            child: Text('O usuário digitou: $textArgument'),
+          ),
         ],
       ),
     );

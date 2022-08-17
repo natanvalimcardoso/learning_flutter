@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           '/': (_) => PaginaUm(),
-          '/pagina_dois': (_) => PaginaDois(),
+          '/paginaDois': (_) => PaginaDois(),
         });
   }
 }
