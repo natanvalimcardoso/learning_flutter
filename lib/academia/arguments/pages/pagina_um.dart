@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PaginaUm extends StatelessWidget {
-  const PaginaUm({Key? key}) : super(key: key);
+  PaginaUm({Key? key}) : super(key: key);
+  final TextEditingController _textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -9,9 +10,18 @@ class PaginaUm extends StatelessWidget {
       child: Column(
         children: [
           Center(
-            child: ElevatedButton(
-              onPressed: () {},
-              child: const Text('Enviar dados'),
+            child: Column(
+              children: [
+                TextField(
+                  controller: _textEditingController,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    
+                  },
+                  child: const Text('Enviar dados'),
+                ),
+              ],
             ),
           )
         ],
