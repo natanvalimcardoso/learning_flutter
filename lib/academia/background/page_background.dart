@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PageBackground extends StatelessWidget {
   const PageBackground({Key? key}) : super(key: key);
@@ -20,29 +21,27 @@ class PageBackground extends StatelessWidget {
             children: [
               RichText(
                 textAlign: TextAlign.center,
-                text: const TextSpan(
+                text: TextSpan(
                   children: <TextSpan>[
                     TextSpan(
-                      text: 'Seja bem-vindo',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 196, 196, 196),
-                      ),
-                    ),
+                        text: 'Seja bem-vindo',
+                        style: GoogleFonts.rubikMonoOne(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 196, 196, 196),
+                        )),
                     // quebra linha
                     TextSpan(
                       text: '\n',
                     ),
                     // texto alinhado
                     TextSpan(
-                      text: 'Natan',
-                      style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
+                        text: 'Natan',
+                        style: GoogleFonts.rubikMonoOne(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        )),
                   ],
                 ),
               ),
