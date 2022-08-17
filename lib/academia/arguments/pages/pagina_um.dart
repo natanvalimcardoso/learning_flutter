@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/academia/arguments/pages/pagina_dois.dart';
 
 class PaginaUm extends StatelessWidget {
   PaginaUm({Key? key}) : super(key: key);
