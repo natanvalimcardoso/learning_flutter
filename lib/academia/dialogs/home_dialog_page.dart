@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/academia/dialogs/dialog_widgets/dialog_custom.dart';
 
 class HomeDialogPage extends StatelessWidget {
   const HomeDialogPage({Key? key}) : super(key: key);
@@ -18,13 +19,25 @@ class HomeDialogPage extends StatelessWidget {
             ElevatedButton(
               child: const Text('Dialog'),
               onPressed: () {
-                Navigator.pop(context);
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return DialogCustom(context); //* Dialog totalmente customizado
+                  },
+                );
               },
             ),
             ElevatedButton(
               child: const Text('SimpleDialog'),
               onPressed: () {
-                Navigator.pop(context);
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return const SimpleDialog(
+                      title: Text('Seja bem-vindo'),
+                    );
+                  },
+                );
               },
             ),
             ElevatedButton(
