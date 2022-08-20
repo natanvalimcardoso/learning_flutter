@@ -33,8 +33,21 @@ class HomeDialogPage extends StatelessWidget {
                 showDialog(
                   context: context,
                   builder: (context) {
-                    return const SimpleDialog(
-                      title: Text('Seja bem-vindo'),
+                    return SimpleDialog(
+                      title: const Text('Seja bem-vindo'),
+                      contentPadding: const EdgeInsets.all(20),
+                      children: [
+                        const Text('Você está logado'),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: const Text('OK'),
+                          ),
+                        ),
+                      ],
                     );
                   },
                 );
@@ -42,9 +55,7 @@ class HomeDialogPage extends StatelessWidget {
             ),
             ElevatedButton(
               child: const Text('AlertDialog'),
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              onPressed: () {},
             ),
             ElevatedButton(
               child: const Text('Time Picker'),
