@@ -55,7 +55,33 @@ class HomeDialogPage extends StatelessWidget {
             ),
             ElevatedButton(
               child: const Text('AlertDialog'),
-              onPressed: () {},
+              onPressed: () {
+                AlertDialog(
+                  title: const Text('Você deseja continuar?'),
+                  content: SingleChildScrollView(
+                    child: ListBody(
+                      children: const [
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text('Caso aceite não poderá retornar mais'),
+                        ),
+                      ],
+                    ),
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('Cancelar'),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text('Continuar'),
+                    )
+                  ],
+                );
+              },
             ),
             ElevatedButton(
               child: const Text('Time Picker'),
