@@ -56,43 +56,61 @@ class HomeDialogPage extends StatelessWidget {
             ElevatedButton(
               child: const Text('AlertDialog'),
               onPressed: () {
-                AlertDialog(
-                  title: const Text('Você deseja continuar?'),
-                  content: SingleChildScrollView(
-                    child: ListBody(
-                      children: const [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text('Caso aceite não poderá retornar mais'),
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: const Text('Você deseja continuar?'),
+                      content: SingleChildScrollView(
+                        child: ListBody(
+                          children: const [
+                            Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text('Caso aceite não poderá retornar mais'),
+                            ),
+                          ],
                         ),
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: const Text('Cancelar'),
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text('Continuar'),
+                        )
                       ],
-                    ),
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text('Cancelar'),
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: const Text('Continuar'),
-                    )
-                  ],
+                    );
+                  },
                 );
               },
             ),
+
+            //* Importante
+
             ElevatedButton(
               child: const Text('Time Picker'),
-              onPressed: () {
-                Navigator.pop(context);
+              onPressed: () async {
+                final selectedTime = await showTimePicker(
+                  context: context,
+                  initialTime: TimeOfDay.now(),
+                );
+                print(selectedTime);
               },
             ),
             ElevatedButton(
               child: const Text('Date Picker'),
-              onPressed: () {
-                Navigator.pop(context);
+              onPressed: () async {
+                final dataCompleta = await showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(2000),
+                  lastDate: DateTime(2025),
+                );
+                print('A data selecionada foi: $dataCompleta');
               },
             ),
           ],
