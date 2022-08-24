@@ -5,6 +5,7 @@ enum PopupMenuPages {
   arguments,
   pageBackground,
   homeDialogPage,
+  formsPage,
 }
 
 class HomeAcademiaPage extends StatelessWidget {
@@ -31,6 +32,9 @@ class HomeAcademiaPage extends StatelessWidget {
                   case PopupMenuPages.homeDialogPage:
                     Navigator.of(context).pushNamed('/homeDialogPage');
                     break;
+                    case PopupMenuPages.formsPage:
+                    Navigator.of(context).pushNamed('/formsPage');
+                    break;
                   default:
                 }
               },
@@ -47,6 +51,10 @@ class HomeAcademiaPage extends StatelessWidget {
                   const PopupMenuItem<PopupMenuPages>(
                     value: PopupMenuPages.homeDialogPage,
                     child: Text('Dialog'),
+                  ),
+                   const PopupMenuItem<PopupMenuPages>(
+                    value: PopupMenuPages.formsPage,
+                    child: Text('Forms'),
                   ),
                 ];
               })

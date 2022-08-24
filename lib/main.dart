@@ -4,6 +4,7 @@ import 'academia/arguments/pages/pagina_dois.dart';
 import 'academia/arguments/pages/pagina_um.dart';
 import 'academia/background/page_background.dart';
 import 'academia/dialogs/home_dialog_page.dart';
+import 'academia/forms/forms_page.dart';
 import 'academia/home_academia_page.dart';
 
 void main() {
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         '/paginaDois': (_) => const PaginaDois(),
         '/pageBackground': (_) => const PageBackground(),
         '/homeDialogPage': (_) => const HomeDialogPage(),
+        '/formsPage': (_) => const FormsPage(),
       },
     );
   }
