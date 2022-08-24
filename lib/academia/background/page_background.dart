@@ -6,8 +6,11 @@ class PageBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Container(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Background'),
+      ),
+      body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('lib/academia/background/assets/folhas.jpg'),
@@ -24,12 +27,13 @@ class PageBackground extends StatelessWidget {
                 text: TextSpan(
                   children: <TextSpan>[
                     TextSpan(
-                        text: 'Seja bem-vindo',
-                        style: GoogleFonts.rubikMonoOne(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 196, 196, 196),
-                        )),
+                      text: 'Seja bem-vindo a academia',
+                      style: GoogleFonts.rubikMonoOne(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 196, 196, 196),
+                      ),
+                    ),
                     // quebra linha
                     TextSpan(
                       text: '\n',

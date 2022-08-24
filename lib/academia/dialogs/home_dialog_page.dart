@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/academia/dialogs/dialog_widgets/dialog_custom.dart';
 
@@ -59,7 +60,7 @@ class HomeDialogPage extends StatelessWidget {
                 showDialog(
                   context: context,
                   builder: (context) {
-                    return AlertDialog(
+                    return CupertinoAlertDialog(
                       title: const Text('Você deseja continuar?'),
                       content: SingleChildScrollView(
                         child: ListBody(
