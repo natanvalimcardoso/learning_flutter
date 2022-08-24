@@ -6,8 +6,11 @@ class PaginaUm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Column(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Arguments'),
+      ),
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(

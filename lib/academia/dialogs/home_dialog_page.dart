@@ -104,7 +104,7 @@ class HomeDialogPage extends StatelessWidget {
             ElevatedButton(
               child: const Text('Date Picker'),
               onPressed: () async {
-                final dataCompleta = await showDatePicker(
+              final dataCompleta =  await showDatePicker(
                   context: context,
                   initialDate: DateTime.now(),
                   firstDate: DateTime(2000),
