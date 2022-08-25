@@ -7,9 +7,9 @@ class FormsPage extends StatefulWidget {
   State<FormsPage> createState() => _FormsPageState();
 }
 
-String texto = '';
-
 class _FormsPageState extends State<FormsPage> {
+  final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,19 +17,38 @@ class _FormsPageState extends State<FormsPage> {
         title: const Text('Forms'),
       ),
       body: Form(
-        child: Column(
-          children: [
-            TextField(
-              onChanged: (String value) {
-                setState(
-                  () {
-                    texto = value;
+        key: formKey,
+        child: Center(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextFormField(
+                  validator: (String? value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Campo não preenchido';
+                    }
+                    return null;
                   },
-                );
-              },
-            ),
-            Text('O texto digitado é: $texto')
-          ],
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  var formValid = formKey.currentState?.validate() ?? false;
+                  var message = 'Formulário inválido';
+                  if (formValid) {
+                    message = 'Formulário válido';
+                  }
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(message),
+                    ),
+                  );
+                },
+                child: const Text('Salvar'),
+              ),
+            ],
+          ),
         ),
       ),
     );
