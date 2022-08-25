@@ -46,7 +46,8 @@ class Aluno {
       idade: map['idade'],
       isAluno: map['isAluno'] ?? false,
       nomesCurso: map['nomesCurso'],
-      cursos: map['cursos'].map((cursoMap) => Cursos.fromMap(cursoMap)).toList(),
+      cursos:
+          map['cursos'].map((cursoMap) => Cursos.fromMap(cursoMap)).toList(),
       endereco: Endereco.fromMap(map['endereco']),
     );
   }
@@ -54,14 +55,11 @@ class Aluno {
   String toJson() => jsonEncode(toMap());
   factory Aluno.fromJson(String json) => Aluno.fromMap(jsonDecode(json));
 
-
-
   @override
   String toString() {
     return 'Aluno(id: $id, nome: $nome, idade: $idade, isAluno: $isAluno, nomesCurso: $nomesCurso, cursos: $cursos, endereco: $endereco)';
   }
 }
-
 
 // {
 // id: "1",

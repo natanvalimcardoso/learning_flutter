@@ -54,7 +54,8 @@ Future<void> salvarPost() async {
     'userId': 1,
   };
 
-  var response = await http.post(Uri.parse(url), body: convert.jsonEncode(mapaRequest));
+  var response =
+      await http.post(Uri.parse(url), body: convert.jsonEncode(mapaRequest));
   print(response.statusCode);
   print(response.body);
 }

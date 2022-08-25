@@ -49,12 +49,6 @@ class Endereco {
   }
 }
 
-
-
-
-
-
-
 // endereco: {
 // rua: "Rua Governador Jorge Lacerda",
 // CEP: "09050496911",

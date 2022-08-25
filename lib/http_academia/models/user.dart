@@ -31,7 +31,8 @@ class User {
       userName: map['userName'] ?? '',
       user_types: map['user_types']?.map<UserTypes>((type) {
             return UserTypes.fromMap(type);
-          }).toList() ?? const <UserTypes>[],
+          }).toList() ??
+          const <UserTypes>[],
     );
   }
 

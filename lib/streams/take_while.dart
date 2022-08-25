@@ -8,8 +8,6 @@ Future<void> main() async {
   }
 }
 
-
-
 int callback(int value) {
   return (value + 1) * 2;
 }

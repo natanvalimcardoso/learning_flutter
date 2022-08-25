@@ -24,12 +24,12 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (_) =>  const HomeAcademiaPage(),
+        '/': (_) => const HomeAcademiaPage(),
         '/arguments': (_) => PaginaUm(),
         '/paginaDois': (_) => const PaginaDois(),
         '/pageBackground': (_) => const PageBackground(),
         '/homeDialogPage': (_) => const HomeDialogPage(),
-        '/formsPage': (_) => const FormsPage(),
+        '/formsPage': (_) => const FormsPage()
       },
     );
   }

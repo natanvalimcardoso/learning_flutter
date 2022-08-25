@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class DialogCustom extends Dialog {
   DialogCustom(BuildContext context, {Key? key})
-      : super(key: key, 
+      : super(
+          key: key,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),

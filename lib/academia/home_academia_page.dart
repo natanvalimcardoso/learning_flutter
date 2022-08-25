@@ -14,10 +14,10 @@ class HomeAcademiaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Academia do Flutter'),
-        actions: [
-          PopupMenuButton(
+        appBar: AppBar(
+          title: const Text('Academia do Flutter'),
+          actions: [
+            PopupMenuButton(
               icon: const Icon(Icons.menu),
               onSelected: (
                 PopupMenuPages valueSelected,
@@ -32,7 +32,7 @@ class HomeAcademiaPage extends StatelessWidget {
                   case PopupMenuPages.homeDialogPage:
                     Navigator.of(context).pushNamed('/homeDialogPage');
                     break;
-                    case PopupMenuPages.formsPage:
+                  case PopupMenuPages.formsPage:
                     Navigator.of(context).pushNamed('/formsPage');
                     break;
                   default:
@@ -52,16 +52,17 @@ class HomeAcademiaPage extends StatelessWidget {
                     value: PopupMenuPages.homeDialogPage,
                     child: Text('Dialog'),
                   ),
-                   const PopupMenuItem<PopupMenuPages>(
+                  const PopupMenuItem<PopupMenuPages>(
                     value: PopupMenuPages.formsPage,
                     child: Text('Forms'),
                   ),
                 ];
-              })
-        ],
-      ),
-      body: Container(
-        child: Column(
+              },
+            )
+          ],
+        ),
+        body: Container(
+            child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RichText(
@@ -73,27 +74,26 @@ class HomeAcademiaPage extends StatelessWidget {
                     style: GoogleFonts.rubikMonoOne(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 196, 196, 196),
+                      color: const Color.fromARGB(255, 196, 196, 196),
                     ),
                   ),
                   // quebra linha
-                  TextSpan(
+                  const TextSpan(
                     text: '\n',
                   ),
                   // texto alinhado
                   TextSpan(
-                      text: 'Natan',
-                      style: GoogleFonts.rubikMonoOne(
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey,
-                      )),
+                    text: 'Natan',
+                    style: GoogleFonts.rubikMonoOne(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                    ),
+                  )
                 ],
               ),
             ),
           ],
-        ),
-      ),
-    );
+        )));
   }
 }

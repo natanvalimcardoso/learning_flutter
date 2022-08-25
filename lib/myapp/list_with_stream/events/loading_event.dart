@@ -1,3 +1,3 @@
 import 'list_event.dart';
 
-class LoadingEvent implements ListEvent{}
+class LoadingEvent implements ListEvent {}

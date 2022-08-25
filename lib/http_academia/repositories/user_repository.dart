@@ -9,6 +9,6 @@ class UserRepository {
     if (response.statusCode == 200) {
       return User.fromJson(response.body);
     }
-    return null; 
+    return null;
   }
 }

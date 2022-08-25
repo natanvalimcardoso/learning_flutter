@@ -9,6 +9,17 @@ class FormsPage extends StatefulWidget {
 
 class _FormsPageState extends State<FormsPage> {
   final formKey = GlobalKey<FormState>();
+  final formKeyDrop = GlobalKey<FormState>();
+
+  List valores = [
+    'Categoria 1',
+    'Categoria 2',
+    'Categoria 3',
+    'Categoria 4',
+  ];
+
+  String resultado = '';
+
   final nameEC = TextEditingController();
 
   @override
@@ -31,14 +42,15 @@ class _FormsPageState extends State<FormsPage> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: TextFormField(
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   controller: nameEC,
                   maxLines: 1,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide(color: Colors.black)),
-                      labelText: 'Nome Completo'),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(color: Colors.black),
+                    ),
+                    labelText: 'Nome Completo',
+                  ),
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
                       return 'Campo não preenchido';
@@ -46,6 +58,26 @@ class _FormsPageState extends State<FormsPage> {
                     return null;
                   },
                 ),
+              ),
+              DropdownButtonFormField(
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Dropdown não preenchido';
+                  }
+                },
+                items: valores.map((element) {
+                  return DropdownMenuItem(
+                    value: element.toString(),
+                    child: Text(element),
+                  );
+                }).toList(),
+                onChanged: (String? value) {
+                  setState(() {
+                    if (value != null) {
+                      resultado = value;
+                    }
+                  });
+                },
               ),
               ElevatedButton(
                 onPressed: () {
@@ -59,6 +91,7 @@ class _FormsPageState extends State<FormsPage> {
                       content: Text(message),
                     ),
                   );
+                  print(resultado);
                 },
                 child: const Text('Salvar'),
               ),

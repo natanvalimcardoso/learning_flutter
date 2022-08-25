@@ -12,7 +12,6 @@ class FlexibleExtended extends StatelessWidget {
         title: const Text('Flexible & Expanded'),
       ),
       body: Row(
-
         children: <Widget>[
           Container(
             height: 100,

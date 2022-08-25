@@ -5,7 +5,7 @@ class UserTypes {
   final String id;
   final String userId;
   final String name;
-  
+
   UserTypes({
     required this.id,
     required this.userId,
@@ -30,7 +30,8 @@ class UserTypes {
 
   String toJson() => json.encode(toMap());
 
-  factory UserTypes.fromJson(String source) =>UserTypes.fromMap(json.decode(source));
+  factory UserTypes.fromJson(String source) =>
+      UserTypes.fromMap(json.decode(source));
 
   @override
   String toString() => 'UserTypes(id: $id, userId: $userId, name: $name)';

@@ -33,15 +33,6 @@ class Telefone {
   String toString() => 'Telefone(ddd: $ddd, numero: $numero)';
 }
 
-
-
-
-
-
-
-
-
-
 // telefone: {
 // ddd: 11,
 // numero: "48991749818",

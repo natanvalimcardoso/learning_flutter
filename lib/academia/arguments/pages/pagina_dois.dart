@@ -8,14 +8,15 @@ class PaginaDois extends StatefulWidget {
 }
 
 class _PaginaDoisState extends State<PaginaDois> {
-   String textArgument = '';
+  String textArgument = '';
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       setState(() {
-        final argumentsData = ModalRoute.of(context)?.settings.arguments as String?;
+        final argumentsData =
+            ModalRoute.of(context)?.settings.arguments as String?;
         textArgument = argumentsData ?? '';
       });
     });

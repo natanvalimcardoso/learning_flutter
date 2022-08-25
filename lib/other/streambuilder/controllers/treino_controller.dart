@@ -8,7 +8,8 @@ class TreinoController {
   List<Treino> treinoTimers;
   TreinoController({required this.treinoTimers});
 
-  Stream<TreinoEvent> start() async* {// O async* vai denominar que é uma função generator, o return so retorna 1 coisa, e o yield não mata a execução
+  Stream<TreinoEvent> start() async* {
+    // O async* vai denominar que é uma função generator, o return so retorna 1 coisa, e o yield não mata a execução
     yield StartEvent();
 
     for (Treino treino in treinoTimers) {
@@ -16,7 +17,8 @@ class TreinoController {
         await Future.delayed(const Duration(seconds: 1));
         yield ExercicioEvent(
             treino: treino,
-            now: seconds); //Vou mandar lá para o consumidor, ou seja quem ta recebendos o dados dos nossos eventos.
+            now:
+                seconds); //Vou mandar lá para o consumidor, ou seja quem ta recebendos o dados dos nossos eventos.
       }
     }
 

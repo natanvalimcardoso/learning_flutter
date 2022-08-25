@@ -39,7 +39,6 @@ class Cidade {
     return Cidade.fromMap(jsonMap);
   }
 
-
   //* Pega nossa instacia e transformar em chave e valor
   Map<String, dynamic> toMap() {
     return {
@@ -53,16 +52,15 @@ class Cidade {
     };
   }
 
-  //* Transformar em json 
+  //* Transformar em json
   String toJson() => jsonEncode(toMap());
-
 
   //* Serve só para printar no depurado e não aparecer intance of ...
   @override
   String toString() {
     return 'Cidade(cep: $cep, logradouro: $logradouro, complemento: $complemento, bairro: $bairro, localidade: $localidade, uf: $uf, ddd: $ddd)';
   }
-  }
+}
 
 // {
 // cep: "88990-000",

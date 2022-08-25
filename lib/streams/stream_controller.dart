@@ -18,5 +18,5 @@ Future<void> main() async {
     await Future.delayed(const Duration(milliseconds: 500));
   }
 
-  await streamController.close(); // depois 
+  await streamController.close(); // depois
 }

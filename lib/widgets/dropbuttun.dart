@@ -16,17 +16,19 @@ class _DropButtonState extends State<DropButton> {
     return Scaffold(
       body: Center(
         child: DropdownButton<String>(
-          onChanged: (String? newValue){
+          onChanged: (String? newValue) {
             setState(() {
-              dropdownValue = newValue!; // serve para atualizar o valor do dropdown onChanged todo.
+              dropdownValue =
+                  newValue!; // serve para atualizar o valor do dropdown onChanged todo.
               // ignore: avoid_print
               print(dropdownValue);
             });
           },
-          value: dropdownValue, //  set value to the selected item  
+          value: dropdownValue, //  set value to the selected item
           items: items.map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>( //puxa o valor do dropdown e mapeia para o dropdownmenuitem 
-              value: value, // seleciona o valor do dropdown 
+            return DropdownMenuItem<String>(
+              //puxa o valor do dropdown e mapeia para o dropdownmenuitem
+              value: value, // seleciona o valor do dropdown
               child: Text(value),
             );
           }).toList(), //o tolist transforma o map em lista

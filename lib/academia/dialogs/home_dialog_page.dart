@@ -23,7 +23,8 @@ class HomeDialogPage extends StatelessWidget {
                 showDialog(
                   context: context,
                   builder: (context) {
-                    return DialogCustom(context); //* Dialog totalmente customizado
+                    return DialogCustom(
+                        context); //* Dialog totalmente customizado
                   },
                 );
               },
@@ -67,7 +68,8 @@ class HomeDialogPage extends StatelessWidget {
                           children: const [
                             Padding(
                               padding: EdgeInsets.all(8.0),
-                              child: Text('Caso aceite não poderá retornar mais'),
+                              child:
+                                  Text('Caso aceite não poderá retornar mais'),
                             ),
                           ],
                         ),
@@ -105,7 +107,7 @@ class HomeDialogPage extends StatelessWidget {
             ElevatedButton(
               child: const Text('Date Picker'),
               onPressed: () async {
-              final dataCompleta =  await showDatePicker(
+                final dataCompleta = await showDatePicker(
                   context: context,
                   initialDate: DateTime.now(),
                   firstDate: DateTime(2000),
