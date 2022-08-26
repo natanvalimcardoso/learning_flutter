@@ -91,7 +91,6 @@ class _FormsPageState extends State<FormsPage> {
                       content: Text(message),
                     ),
                   );
-                  print(resultado);
                 },
                 child: const Text('Salvar'),
               ),
