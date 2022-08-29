@@ -8,6 +8,7 @@ import 'academia/dialogs/home_dialog_page.dart';
 import 'academia/forms/forms_page.dart';
 import 'academia/home_academia_page.dart';
 import 'academia/stack/home_stack_page.dart';
+import 'academia/stack/loading_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/formsPage': (_) => const FormsPage(),
         '/homeStackPage': (_) =>  HomeStackPage(),
         '/circleAvatarPage': (_) =>  const CircleAvatarPage(),
+        '/loadingPage': (_) =>  const LoadingPage(),
       },
     );
   }

@@ -26,7 +26,7 @@ class HomeStackPage extends StatelessWidget {
           ),
           //* Parte branca
           Container(
-            color: Colors.white54,
+            color: Colors.black45,
           ),
           //* Card
           Positioned(
