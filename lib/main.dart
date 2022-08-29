@@ -6,6 +6,7 @@ import 'academia/background/page_background.dart';
 import 'academia/circle_avatar/circle_avatar_page.dart';
 import 'academia/dialogs/home_dialog_page.dart';
 import 'academia/forms/forms_page.dart';
+import 'academia/gerenciadores_estado/home_gerenciadores.dart';
 import 'academia/home_academia_page.dart';
 import 'academia/stack/home_stack_page.dart';
 import 'academia/stack/loading_page.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/homeStackPage': (_) =>  HomeStackPage(),
         '/circleAvatarPage': (_) =>  const CircleAvatarPage(),
         '/loadingPage': (_) =>  const LoadingPage(),
+        '/homeGerenciadores': (_) =>  const HomeGerenciadores(),
       },
     );
   }

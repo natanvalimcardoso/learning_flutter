@@ -9,6 +9,7 @@ enum PopupMenuPages {
   homeStackPage,
   circleAvatarPage,
   loadingPage,
+  homeGerenciadores,
 }
 
 class HomeAcademiaPage extends StatelessWidget {
@@ -48,6 +49,9 @@ class HomeAcademiaPage extends StatelessWidget {
                   case PopupMenuPages.loadingPage:
                     Navigator.of(context).pushNamed('/loadingPage');
                     break;
+                  case PopupMenuPages.homeGerenciadores:
+                    Navigator.of(context).pushNamed('/homeGerenciadores');
+                    break;
                   default:
                 }
               },
@@ -80,6 +84,10 @@ class HomeAcademiaPage extends StatelessWidget {
                   const PopupMenuItem<PopupMenuPages>(
                     value: PopupMenuPages.circleAvatarPage,
                     child: Text('Circle Avatar'),
+                  ),
+                  const PopupMenuItem<PopupMenuPages>(
+                    value: PopupMenuPages.homeGerenciadores,
+                    child: Text('Gerenciador de estado'),
                   ),
                 ];
               },
