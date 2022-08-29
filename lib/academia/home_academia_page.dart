@@ -7,6 +7,7 @@ enum PopupMenuPages {
   homeDialogPage,
   formsPage,
   homeStackPage,
+  circleAvatarPage,
 }
 
 class HomeAcademiaPage extends StatelessWidget {
@@ -40,6 +41,9 @@ class HomeAcademiaPage extends StatelessWidget {
                   case PopupMenuPages.homeStackPage:
                     Navigator.of(context).pushNamed('/homeStackPage');
                     break;
+                  case PopupMenuPages.circleAvatarPage:
+                    Navigator.of(context).pushNamed('/circleAvatarPage');
+                    break;
                   default:
                 }
               },
@@ -64,6 +68,10 @@ class HomeAcademiaPage extends StatelessWidget {
                   const PopupMenuItem<PopupMenuPages>(
                     value: PopupMenuPages.homeStackPage,
                     child: Text('Stack'),
+                  ),
+                  const PopupMenuItem<PopupMenuPages>(
+                    value: PopupMenuPages.circleAvatarPage,
+                    child: Text('Circle Avatar'),
                   ),
                 ];
               },

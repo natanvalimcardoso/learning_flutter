@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'academia/arguments/pages/pagina_dois.dart';
 import 'academia/arguments/pages/pagina_um.dart';
 import 'academia/background/page_background.dart';
+import 'academia/circle_avatar/circle_avatar_page.dart';
 import 'academia/dialogs/home_dialog_page.dart';
 import 'academia/forms/forms_page.dart';
 import 'academia/home_academia_page.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         '/homeDialogPage': (_) => const HomeDialogPage(),
         '/formsPage': (_) => const FormsPage(),
         '/homeStackPage': (_) =>  HomeStackPage(),
+        '/circleAvatarPage': (_) =>  const CircleAvatarPage(),
       },
     );
   }
