@@ -6,6 +6,7 @@ enum PopupMenuPages {
   pageBackground,
   homeDialogPage,
   formsPage,
+  homeStackPage,
 }
 
 class HomeAcademiaPage extends StatelessWidget {
@@ -13,6 +14,7 @@ class HomeAcademiaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
           title: const Text('Academia do Flutter'),
@@ -35,6 +37,9 @@ class HomeAcademiaPage extends StatelessWidget {
                   case PopupMenuPages.formsPage:
                     Navigator.of(context).pushNamed('/formsPage');
                     break;
+                  case PopupMenuPages.homeStackPage:
+                    Navigator.of(context).pushNamed('/homeStackPage');
+                    break;
                   default:
                 }
               },
@@ -56,6 +61,10 @@ class HomeAcademiaPage extends StatelessWidget {
                     value: PopupMenuPages.formsPage,
                     child: Text('Forms'),
                   ),
+                  const PopupMenuItem<PopupMenuPages>(
+                    value: PopupMenuPages.homeStackPage,
+                    child: Text('Stack'),
+                  ),
                 ];
               },
             )
@@ -66,6 +75,7 @@ class HomeAcademiaPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RichText(
+              textScaleFactor: ((size.width + size.height) / 2 * 0.00185),
               textAlign: TextAlign.center,
               text: TextSpan(
                 children: <TextSpan>[

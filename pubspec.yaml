@@ -39,6 +39,8 @@ dependencies:
   http: ^0.13.4
   dartion: ^1.0.7
   google_fonts: ^3.0.1
+  lorem_ipsum: ^0.0.1
+  flutter_lorem: ^2.0.0
 
 dev_dependencies:
   flutter_test:
