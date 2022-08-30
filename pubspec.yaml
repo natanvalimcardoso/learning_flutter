@@ -43,6 +43,7 @@ dependencies:
   flutter_lorem: ^2.0.0
   loading_animation_widget: ^1.2.0+2
   syncfusion_flutter_gauges: ^20.2.45
+  currency_text_input_formatter: ^2.1.7
 
 dev_dependencies:
   flutter_test:
