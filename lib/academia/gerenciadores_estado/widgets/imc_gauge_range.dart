@@ -14,8 +14,8 @@ class ImcGaugeRange extends GaugeRange {
     color: color,
     label: label,
     sizeUnit:  GaugeSizeUnit.factor,
-    labelStyle: const GaugeTextStyle(fontFamily: 'Times', fontSize: 12),
-    startWidth: 0.56,
+    labelStyle: const GaugeTextStyle(fontFamily: 'Times', fontSize: 15),
+    startWidth: 0.65,
     endWidth: 0.65,
   );
 }

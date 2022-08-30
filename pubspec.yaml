@@ -44,6 +44,7 @@ dependencies:
   loading_animation_widget: ^1.2.0+2
   syncfusion_flutter_gauges: ^20.2.45
   currency_text_input_formatter: ^2.1.7
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

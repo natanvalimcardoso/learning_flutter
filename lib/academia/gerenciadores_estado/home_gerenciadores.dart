@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/academia/gerenciadores_estado/setState/imc_setState_page.dart';
+
+import 'setState/set_state_page.dart';
 
 class HomeGerenciadores extends StatelessWidget {
   const HomeGerenciadores({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class HomeGerenciadores extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: ()=> _goToPage(context: context, page: const ImcSetStatePage()),
+              onPressed: ()=> _goToPage(context: context, page: const SetStatePage()),
               child: const Text('SetState'),
             ),
             ElevatedButton(
