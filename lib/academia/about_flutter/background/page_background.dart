@@ -13,7 +13,7 @@ class PageBackground extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('lib/academia/background/assets/folhas.jpg'),
+            image: AssetImage('lib/academia/about_flutter/background/assets/folhas.jpg'),
             fit: BoxFit.cover,
           ),
         ),
