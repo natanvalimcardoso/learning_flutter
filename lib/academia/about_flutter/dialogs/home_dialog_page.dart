@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/academia/dialogs/dialog_widgets/dialog_custom.dart';
+
+import 'dialog_widgets/dialog_custom.dart';
 
 class HomeDialogPage extends StatelessWidget {
   const HomeDialogPage({Key? key}) : super(key: key);
