@@ -3,22 +3,22 @@ import 'dart:math';
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:learn_flutter/academia/gerenciadores_estado/change_notifier/change_notifier_controller.dart';
 
-import 'widgets/imc_gauge.dart';
+import '../widgets/imc_gauge.dart';
 
-
-class TemplatePage extends StatefulWidget {
-  const TemplatePage({Key? key}) : super(key: key);
+class ChangeNotifierPage extends StatefulWidget {
+  const ChangeNotifierPage({Key? key}) : super(key: key);
 
   @override
-  State<TemplatePage> createState() => _TemplatePageState();
+  State<ChangeNotifierPage> createState() => _ChangeNotifierPageState();
 }
 
-class _TemplatePageState extends State<TemplatePage> {
-  final TextEditingController _weightController = TextEditingController();
-  final TextEditingController _heightController = TextEditingController();
+class _ChangeNotifierPageState extends State<ChangeNotifierPage> {
+  final controller = ChangeNotifierController();
+  final _weightController = TextEditingController();
+  final _heightController = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  var imc = 0.0;
 
   //* Sempre que tiver controller usamos o dispose para limpar a memoria do objeto quando a tela for fechada
   @override
@@ -27,23 +27,12 @@ class _TemplatePageState extends State<TemplatePage> {
     _heightController.dispose();
     super.dispose();
   }
-  
-    Future<void> _calcularImc(double weight, double height) async {
-    setState(() {
-      imc = 0;
-    });
-    await Future.delayed(Duration(seconds: 1));
-    setState(() {
-      imc = weight / pow(height, 2);
-    });
-  }
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SetState'),
+        title: const Text('ChangeNotifier'),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -52,8 +41,13 @@ class _TemplatePageState extends State<TemplatePage> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                ImcGauge(
-                  imc: imc,
+                AnimatedBuilder( //* Sempre que tiver um controller usamos o AnimatedBuilder para atualizar a tela
+                  animation: controller,
+                  builder: (context, child) {
+                    return ImcGauge(
+                      imc: controller.imc,
+                    );
+                  },
                 ),
                 const SizedBox(
                   height: 20,
@@ -105,7 +99,7 @@ class _TemplatePageState extends State<TemplatePage> {
                       double peso = formatter.parse(_weightController.text) as double;
                       double altura = formatter.parse(_heightController.text) as double;
 
-                      _calcularImc(peso, altura);
+                      controller.calcularImc(peso: peso, altura: altura);
                     }
                   },
                   child: const Text('Calcular IMC'),

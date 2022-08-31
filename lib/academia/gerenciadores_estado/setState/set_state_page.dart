@@ -14,19 +14,16 @@ class SetStatePage extends StatefulWidget {
 }
 
 class _SetStatePageState extends State<SetStatePage> {
-  final TextEditingController _weightController = TextEditingController();
-  final TextEditingController _heightController = TextEditingController();
+  final  _weightController = TextEditingController();
+  final  _heightController = TextEditingController();
   final formKey = GlobalKey<FormState>();
   var imc = 0.0;
 
   Future<void> _calcularImc(double weight, double height) async {
-
     setState(() {
       imc = 0;
     });
-    
     await Future.delayed(Duration(seconds: 1));
-
     setState(() {
       imc = weight / pow(height, 2);
     });

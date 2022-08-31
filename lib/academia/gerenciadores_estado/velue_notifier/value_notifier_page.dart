@@ -4,21 +4,20 @@ import 'package:currency_text_input_formatter/currency_text_input_formatter.dart
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'widgets/imc_gauge.dart';
+import '../widgets/imc_gauge.dart';
 
-
-class TemplatePage extends StatefulWidget {
-  const TemplatePage({Key? key}) : super(key: key);
+class ValueNotifierPage extends StatefulWidget {
+  const ValueNotifierPage({Key? key}) : super(key: key);
 
   @override
-  State<TemplatePage> createState() => _TemplatePageState();
+  State<ValueNotifierPage> createState() => _ValueNotifierPageState();
 }
 
-class _TemplatePageState extends State<TemplatePage> {
-  final TextEditingController _weightController = TextEditingController();
-  final TextEditingController _heightController = TextEditingController();
+class _ValueNotifierPageState extends State<ValueNotifierPage> {
+  final  _weightController = TextEditingController();
+  final  _heightController = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  var imc = 0.0;
+  var imc = ValueNotifier(0.0);
 
   //* Sempre que tiver controller usamos o dispose para limpar a memoria do objeto quando a tela for fechada
   @override
@@ -27,23 +26,20 @@ class _TemplatePageState extends State<TemplatePage> {
     _heightController.dispose();
     super.dispose();
   }
-  
-    Future<void> _calcularImc(double weight, double height) async {
-    setState(() {
-      imc = 0;
-    });
-    await Future.delayed(Duration(seconds: 1));
-    setState(() {
-      imc = weight / pow(height, 2);
-    });
-  }
 
+  Future<void> _calcularImc(double weight, double height) async {
+    imc.value = 0;
+
+    await Future.delayed(const Duration(seconds: 1));
+
+    imc.value = weight / pow(height, 2);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SetState'),
+        title: const Text('Value Notifier'),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -52,8 +48,11 @@ class _TemplatePageState extends State<TemplatePage> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                ImcGauge(
-                  imc: imc,
+                ValueListenableBuilder<double>(
+                  valueListenable: imc,
+                  builder: (_, value, __) {
+                    return ImcGauge(imc: value);
+                  },
                 ),
                 const SizedBox(
                   height: 20,

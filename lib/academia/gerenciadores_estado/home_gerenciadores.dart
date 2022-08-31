@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/academia/gerenciadores_estado/change_notifier/change_notifier_page.dart';
+import 'package:learn_flutter/academia/gerenciadores_estado/velue_notifier/value_notifier_page.dart';
 
 import 'setState/set_state_page.dart';
 
@@ -28,11 +30,11 @@ class HomeGerenciadores extends StatelessWidget {
               child: const Text('SetState'),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => _goToPage(context: context, page: const ValueNotifierPage()),
               child: const Text('ValueNotifier'),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => _goToPage(context: context, page: const ChangeNotifierPage()),
               child: const Text('ChangeNotifier'),
             ),
             ElevatedButton(
