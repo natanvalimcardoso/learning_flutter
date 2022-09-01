@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/academia/gerenciadores_estado/bloc_pattern/imc_bloc_pattern_page.dart';
 import 'package:learn_flutter/academia/gerenciadores_estado/change_notifier/change_notifier_page.dart';
 import 'package:learn_flutter/academia/gerenciadores_estado/velue_notifier/value_notifier_page.dart';
 
@@ -38,7 +39,7 @@ class HomeGerenciadores extends StatelessWidget {
               child: const Text('ChangeNotifier'),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => _goToPage(context: context, page: const ImcBlocPatternPage()),
               child: const Text('Bloc Patterns (Streams)'),
             ),
           ],
