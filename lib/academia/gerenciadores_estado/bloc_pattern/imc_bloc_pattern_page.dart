@@ -3,10 +3,10 @@ import 'dart:math';
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:learn_flutter/academia/gerenciadores_estado/bloc_pattern/bloc/imc_bloc_pattern_controller.dart';
+import 'package:learn_flutter/academia/gerenciadores_estado/bloc_pattern/bloc/imc_state.dart';
 
 import '../widgets/imc_gauge.dart';
-
-
 
 class ImcBlocPatternPage extends StatefulWidget {
   const ImcBlocPatternPage({Key? key}) : super(key: key);
@@ -16,17 +16,18 @@ class ImcBlocPatternPage extends StatefulWidget {
 }
 
 class _ImcBlocPatternPageState extends State<ImcBlocPatternPage> {
-  final TextEditingController _weightController = TextEditingController();
-  final TextEditingController _heightController = TextEditingController();
+  final controller = ImcBlocPatternController();
+  final _weightController = TextEditingController();
+  final _heightController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
     _weightController.dispose();
     _heightController.dispose();
+    controller.dispose(); //* Não perdemos memoria e assim otimizamos o maximo
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +42,24 @@ class _ImcBlocPatternPageState extends State<ImcBlocPatternPage> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                const ImcGauge(
-                  imc: 0,
+                StreamBuilder<ImcState>(
+                  stream: controller.imcOut,
+                  builder: (BuildContext context, snapshot) {
+                    var imc = snapshot.data?.imc ?? 0;
+                    return ImcGauge(imc: imc);
+                  },
                 ),
                 const SizedBox(
                   height: 20,
+                ),
+                StreamBuilder<ImcState>(
+                  stream: controller.imcOut,
+                  builder: (BuildContext context, snapshot) {
+                    return Visibility(
+                      visible: snapshot.data is ImcStateLoading,
+                      child: const CircularProgressIndicator.adaptive(),
+                    );
+                  },
                 ),
                 TextFormField(
                   controller: _weightController,
@@ -94,7 +108,7 @@ class _ImcBlocPatternPageState extends State<ImcBlocPatternPage> {
                       double peso = formatter.parse(_weightController.text) as double;
                       double altura = formatter.parse(_heightController.text) as double;
 
-                      // _calcularImc(peso, altura);
+                      controller.calcularImc(peso: peso, altura: altura);
                     }
                   },
                   child: const Text('Calcular IMC'),
