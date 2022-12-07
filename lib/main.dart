@@ -10,6 +10,7 @@ import 'academia/about_flutter/stack/home_stack_page.dart';
 import 'academia/about_flutter/stack/loading_page.dart';
 import 'academia/gerenciadores_estado/home_gerenciadores.dart';
 import 'academia/home_academia_page.dart';
+import 'other/snippers.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (_) => const HomeAcademiaPage(),
+        '/': (_) => const Snippers(),
         '/arguments': (_) => PaginaUm(),
         '/paginaDois': (_) => const PaginaDois(),
         '/pageBackground': (_) => const PageBackground(),
